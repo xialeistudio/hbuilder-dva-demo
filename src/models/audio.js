@@ -4,8 +4,6 @@ export default {
   state: {
     recording: false,
     filename: null,
-    recorder: null,
-    player: null,
   },
   reducers: {},
   effects: {},

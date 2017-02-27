@@ -2,13 +2,13 @@
  * @date 2017/2/27
  * @author xialeistudio<1065890063@qq.com>
  */
+let recorder, player;
 /**
  * 开始录音
- * @param recorder
  * @param options
  * @return {Promise}
  */
-export async function startRecord(recorder, options) {
+export async function startRecord(options) {
   return new Promise((resolve) => {
     recorder.record(options, resolve);
   });
@@ -16,9 +16,8 @@ export async function startRecord(recorder, options) {
 
 /**
  * 停止录音
- * @param recorder
  */
-export function stopRecord(recorder) {
+export function stopRecord() {
   recorder.stop();
 }
 /**
@@ -26,7 +25,7 @@ export function stopRecord(recorder) {
  * @return {*}
  */
 export function getRecorder() {
-  return plus.audio.getRecorder();
+  recorder = plus.audio.getRecorder();
 }
 
 /**
@@ -35,15 +34,14 @@ export function getRecorder() {
  * @return {*}
  */
 export function getPlayer(path) {
-  return plus.audio.createPlayer(path);
+  player = plus.audio.createPlayer(path);
 }
 
 /**
  * 播放音频
- * @param player
  * @return {Promise}
  */
-export async function startPlay(player) {
+export async function startPlay() {
   return new Promise((resolve, reject) => {
     player.play(resolve, reject);
   });
@@ -51,67 +49,60 @@ export async function startPlay(player) {
 
 /**
  * 暂停播放
- * @param player
  * @return {void|*}
  */
-export function pausePlay(player) {
+export function pausePlay() {
   return player.pause();
 }
 
 /**
  * 恢复播放
- * @param player
  * @return {void|*}
  */
-export function resumePlay(player) {
+export function resumePlay() {
   return player.resume();
 }
 
 
 /**
  * 停止播放
- * @param player
  * @return {void|*}
  */
-export function stopPlay(player) {
+export function stopPlay() {
   return player.stop();
 }
 
 /**
  * 跳转指定位置播放，单位秒
- * @param player
  * @param time
  * @return {*}
  */
-export function seekPlayerTo(player, time) {
+export function seekPlayerTo(time) {
   return player.seekTo(time);
 }
 
 /**
  * 获取音频流总长度，单位秒
- * @param player
  * @return {*}
  */
-export function getPlayerDuration(player) {
+export function getPlayerDuration() {
   return player.getDuration();
 }
 
 /**
  * 获取当前播放时间，单位秒
- * @param player
  * @return {*}
  */
-export function getPlayerPosition(player) {
+export function getPlayerPosition() {
   return player.getPosition();
 }
 
 /**
  * 设置播放器输出线路
- * @param player
  * @param route
  * @return {*}
  */
-export function setPlayerRoute(player, route) {
+export function setPlayerRoute(route) {
   return player.setRoue(route);
 }
 
