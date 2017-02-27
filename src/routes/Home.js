@@ -11,7 +11,7 @@ function Home(props, { router }) {
       <List>
         <ListItem arrow="horizontal" extra="加速度传感器"
                   onClick={() => router.push('/accelerometer')}>Accelerometer</ListItem>
-        <ListItem arrow="horizontal" extra="音频模块">Audio</ListItem>
+        <ListItem arrow="horizontal" extra="音频模块" onClick={() => router.push('/audio')}>Audio</ListItem>
         <ListItem arrow="horizontal" extra="条码扫描">Barcode</ListItem>
         <ListItem arrow="horizontal" extra="摄像头">Camera</ListItem>
         <ListItem arrow="horizontal" extra="联系人">Contacts</ListItem>
