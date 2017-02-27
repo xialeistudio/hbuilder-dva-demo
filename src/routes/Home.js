@@ -1,12 +1,16 @@
 import React from "react";
 import { connect } from "dva";
-import { List } from "antd-mobile";
+import { List, ActivityIndicator } from "antd-mobile";
 import Navbar from '../components/Navbar';
 import styles from "./Home.css";
 const ListItem = List.Item;
-function Home(props, { router }) {
+function Home({ ready }, { router }) {
   return (
     <div className={styles.normal}>
+      <ActivityIndicator
+        toast
+        text="正在加载"
+        animating={!ready}/>
       <Navbar showBack={false} title="HBuilder+Dva"/>
       <List>
         <ListItem arrow="horizontal" extra="加速度传感器"
@@ -47,5 +51,10 @@ function Home(props, { router }) {
 Home.contextTypes = {
   router: React.PropTypes.object.isRequired
 };
+function mapStateToProps(state) {
+  return {
+    ...state.home
+  };
+}
 
-export default connect()(Home);
+export default connect(mapStateToProps)(Home);

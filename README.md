@@ -3,3 +3,5 @@
 
 ## 完成功能
 + Accelerometer 
++ Contacts
++ Device

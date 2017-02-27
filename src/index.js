@@ -1,8 +1,13 @@
 import dva from 'dva';
 import './index.css';
+import { Toast } from 'antd-mobile';
 
 // 1. Initialize
-const app = dva();
+const app = dva({
+  onError(e) {
+    Toast.fail(e.message);
+  }
+});
 
 // 2. Plugins
 // app.use({});

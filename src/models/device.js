@@ -1,11 +1,13 @@
 const types = {};
-types[plus.networkinfo.CONNECTION_UNKNOW] = "Unknown";
-types[plus.networkinfo.CONNECTION_NONE] = "None";
-types[plus.networkinfo.CONNECTION_ETHERNET] = "Ethernet";
-types[plus.networkinfo.CONNECTION_WIFI] = "WiFi";
-types[plus.networkinfo.CONNECTION_CELL2G] = "2G";
-types[plus.networkinfo.CONNECTION_CELL3G] = "3G";
-types[plus.networkinfo.CONNECTION_CELL4G] = "4G";
+if (window.plus !== undefined) {
+  types[plus.networkinfo.CONNECTION_UNKNOW] = "Unknown";
+  types[plus.networkinfo.CONNECTION_NONE] = "None";
+  types[plus.networkinfo.CONNECTION_ETHERNET] = "Ethernet";
+  types[plus.networkinfo.CONNECTION_WIFI] = "WiFi";
+  types[plus.networkinfo.CONNECTION_CELL2G] = "2G";
+  types[plus.networkinfo.CONNECTION_CELL3G] = "3G";
+  types[plus.networkinfo.CONNECTION_CELL4G] = "4G";
+}
 export default {
   namespace: 'device',
   state: {
