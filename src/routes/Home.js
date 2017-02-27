@@ -12,10 +12,10 @@ function Home(props, { router }) {
         <ListItem arrow="horizontal" extra="加速度传感器"
                   onClick={() => router.push('/accelerometer')}>Accelerometer</ListItem>
         <ListItem arrow="horizontal" extra="音频模块" onClick={() => router.push('/audio')}>Audio</ListItem>
-        <ListItem arrow="horizontal" extra="条码扫描">Barcode</ListItem>
+        <ListItem arrow="horizontal" extra="条码扫描" onClick={() => router.push('/barcode')}>Barcode</ListItem>
         <ListItem arrow="horizontal" extra="摄像头">Camera</ListItem>
-        <ListItem arrow="horizontal" extra="联系人">Contacts</ListItem>
-        <ListItem arrow="horizontal" extra="设备信息">Device</ListItem>
+        <ListItem arrow="horizontal" extra="联系人" onClick={() => router.push('/contact')}>Contacts</ListItem>
+        <ListItem arrow="horizontal" extra="设备信息" onClick={() => router.push('/device')}>Device</ListItem>
         <ListItem arrow="horizontal" extra="下载模块">Downloader</ListItem>
         <ListItem arrow="horizontal" extra="事件模块">Events</ListItem>
         <ListItem arrow="horizontal" extra="相册模块">Gallery</ListItem>

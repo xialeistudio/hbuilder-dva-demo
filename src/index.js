@@ -10,6 +10,12 @@ const app = dva();
 // 3. Model
 app.model(require('./models/home'));
 
+app.model(require("./models/contact"));
+
+app.model(require("./models/device"));
+
+app.model(require("./models/barcode"));
+
 app.model(require("./models/audio"));
 
 app.model(require("./models/accelerometer"));
